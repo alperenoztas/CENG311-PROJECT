@@ -75,6 +75,175 @@
     font-size: 22px;
 }
 
+/*Join Us Section*/
+
+.join-section{
+    width: 100%;
+    background-color: #6464a3;
+    margin-bottom: -6%;
+}
+
+.join-section p {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 25px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5%;
+}
+
+.send-information {
+    max-width:420px;
+    margin:50px auto;
+    padding-top: 1%;
+    padding-bottom: 5%;
+}
+
+.feedback-input {
+  color:white;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight:500;
+  font-size: 18px;
+  border-radius: 5px;
+  line-height: 22px;
+  background-color: transparent;
+  border:2px solid turquoise;
+  transition: all 0.3s;
+  padding: 13px;
+  margin-bottom: 15px;
+  width:100%;
+  box-sizing: border-box;
+  outline:0;
+}
+
+.feedback-input:focus{ 
+    border:2px solid darkblue;
+}
+
+.send-information > textarea {
+    height: 150px;
+    line-height: 150%;
+    resize:vertical;
+}
+.send-button {
+    font-family: 'Roboto', Arial, sans-serif;
+    width: 100%;
+    background:#CC6666;
+    border-radius:5px;
+    border:0;
+    cursor:pointer;
+    color:white;
+    font-size:24px;
+    padding-top:10px;
+    padding-bottom:10px;
+    transition: all 0.3s;
+    margin-top:-4px;
+    font-weight:700;
+}
+.send-button:hover { 
+    background:#CC4949;
+}
+
+/*Activity Section*/
+
+.activity-button {
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+    border: 0;
+    font-weight: bold;
+    padding: 10px 20px;
+    background: #262626;
+    color: #fff;
+    font-size: 15px;
+    margin-bottom: 7%;
+}
+  
+.activity-button:hover {
+    opacity: 0.9;
+}
+  
+.activity-l {
+    width: 90%;
+    height: 20%;
+    background: url('../images/activity-left.jpg') no-repeat center center/cover;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .activity-l .content {
+    margin-left:65%;
+    width: 40%;
+    padding: 2% 0 0 2%;
+  }
+  
+  .activity-l p {
+    margin: 10px 0 20px;
+  }
+
+  .activity-r {
+    width: 90%;
+    height: 20%;
+    background: url('../images/activity-right.jpg') no-repeat center center/cover;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .activity-r .content {
+    margin-left: ;
+    width: 40%;
+    padding: 2% 0 0 2%;
+  }
+  
+  .activity-r p {
+    margin: 10px 0 20px;
+  }
+
+/*Projects Section*/
+
+.show-cards {
+    width: 90%;
+    margin:5% auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+    margin-bottom: 40px;
+}
+
+.show-card {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.show-cards img {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.show-cards h3 {
+    margin-bottom: 5px;
+}
+
+.show-cards a {
+    text-decoration: none;
+    display: inline-block;
+    padding-top: 10px;
+    color: #78b6e6;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.show-cards a:hover {
+    font-size: large;
+    margin-left: 10px;
+}
+
+  
 /*Footer Section*/  
 .footer{
 
