@@ -315,6 +315,13 @@
 
 /*Activity Section*/
 
+#activities-text {
+    text-align: center;
+    margin-bottom: 5%;
+    margin-top: 5%;
+    font-size: 50px;
+}
+
 .activity-button {
     text-decoration: none;
     cursor: pointer;
