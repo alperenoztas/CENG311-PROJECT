@@ -13,6 +13,19 @@
 }
 
 /*Header Section*/
+#motto {
+    text-align: center;
+    background-color: rgb(28, 23, 99);
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.highlight {
+    color: white;
+    font-family: Arial, sans-serif;
+    font-style: italic;
+}
+
 .navbar {
     display: flex;
     justify-content: space-between;
