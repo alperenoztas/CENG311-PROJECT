@@ -1,6 +1,61 @@
 
 $(function () {
 
+  $('#sumoVideo').click(function (e) { 
+    e.preventDefault();
+    var modal = new Custombox.modal({
+      content: {
+        effect:'makeway',
+        target:"https://www.youtube.com/watch?v=QCqxOzKNFks&ab_channel=RobertMcGregor",
+        width:600
+      }
+    });
+    
+    modal.open();
+  });
+
+  $('#swarmVideo').click(function (e) { 
+    e.preventDefault();
+    var modal = new Custombox.modal({
+      content: {
+        effect:'makeway',
+        target:"https://www.youtube.com/watch?v=P9ZbipO8vxM&ab_channel=TheTelegraph",
+        width:600
+      }
+    });
+    
+    modal.open();
+  });
+
+  $('#lineFollowerVideo').click(function (e) { 
+    e.preventDefault();
+    var modal = new Custombox.modal({
+      content: {
+        effect:'makeway',
+        target:"https://www.youtube.com/watch?v=lnP32gzHdvI&ab_channel=EhsanSalami",
+        width:600
+      }
+    });
+    
+    modal.open();
+  });
+
+  $('#talkingRobot').click(function (e) { 
+    e.preventDefault();
+    var modal = new Custombox.modal({
+      content: {
+        effect:'makeway',
+        target:"https://www.youtube.com/watch?v=BP8nL2bD82U&ab_channel=roborama",
+        width:600
+      }
+    });
+    
+    modal.open();
+  });
+  
+  
+
+
   // When cat is clicked dissapear slide appears
   $('.main-introduction-bg').click(function () {
     $(this).slideUp(400);
