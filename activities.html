@@ -7,7 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Activities</title>
     <link rel="icon" type="image/x-icon" href="assets/images/logo.png">
+
+    <link rel="stylesheet" href="assets/lib/jquery-ui.css">
     <link rel="stylesheet" href="assets/css/style.css">
+
+    <script src="assets/lib/jquery.js"></script>
+    <script src="assets/lib/jquery-ui.js"></script>
+    <script src="assets/js/script.js"></script>
 </head>
 
 <body>
@@ -37,8 +43,8 @@
             <div class="content">
                 <h2>ULTIMATE AYBU ACTIVITY 1</h2>
                 <p>We love participating this activity. I like it </p>
-                <a href="#left" class="activity-button">
-                    Join Now</i>
+                <a href="#left" class="activity-button" id="activityJoinL">
+                    <i>Join Now</i>
                 </a>
             </div>
         </div>
@@ -48,43 +54,43 @@
                 <p>Game Jam's are wonderful. With robotic club, this is the
                     club we inspired.
                 </p>
-                <a href="#right" class="activity-button">
-                    Join Now</i>
+                <a href="#right" class="activity-button" id="activityJoinR"> 
+                    <i>Join Now</i>
                 </a>
             </div>
         </div>
         <div id="show-cards" class="show-cards">
-            <div class="show-card">
+            <div class="show-card" id="card1">
                 <img src="assets/images/activity1.jpg" alt="Activity 1" />
                 <h3>Lorem Ipsum</h3>
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.
                 </p>
-                <a href="#show-cards">Read More</a>
+                <a href="#card1" onclick="activityCardResponse('card1')">Read More</a>
             </div>
-            <div class="show-card">
+            <div class="show-card" id="card2">
                 <img src="assets/images/activity2.jpg" alt="Activity 2" />
                 <h3>Lorem Ipsum</h3>
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.
                 </p>
-                <a href="#show-cards">Read More </a>
+                <a href="#card2" onclick="activityCardResponse('card2')">Read More </a>
             </div>
-            <div class="show-card">
+            <div class="show-card" id="card3">
                 <img src="assets/images/activity3.jpg" alt="Activity 3" />
                 <h3>Lorem Ipsum</h3>
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.
                 </p>
-                <a href="#show-cards">Read More </a>
+                <a href="#card3" onclick="activityCardResponse('card3')">Read More </a>
             </div>
-            <div class="show-card">
+            <div class="show-card" id="card4">
                 <img src="assets/images/activity4.jpg" alt="Activity 4" />
                 <h3>Lorem Ipsum</h3>
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.
                 </p>
-                <a href="#show-cards">Read More</a>
+                <a href="#card4" onclick="activityCardResponse('card4')">Read More</a>
             </div>
         </div>
     </div>

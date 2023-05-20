@@ -5,9 +5,16 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/x-icon" href="assets/images/logo.png">
   <title>Join Us</title>
+  <link rel="icon" type="image/x-icon" href="assets/images/logo.png">
+  
+  
+  <link rel="stylesheet" href="assets/lib/jquery-ui.css">
   <link rel="stylesheet" href="assets/css/style.css">
+
+  <script src="assets/lib/jquery.js"></script>
+  <script src="assets/lib/jquery-ui.js"></script>
+  <script src="assets/js/script.js"></script>
 </head>
 
 <body>
@@ -97,15 +104,20 @@
         </div>
       </div>
     </div>
-
-    <div class="join-section">
-      <p>COME ON JOIN OUR ROBOTIC CLUB</p>
-      <div class="send-information">
-        <input name="name" type="text" class="feedback-input" placeholder="Name" />
-        <input name="email" type="text" class="feedback-input" placeholder="Email" />
-        <textarea name="text" class="feedback-input" placeholder="Your motivation"></textarea>
-        <input class="send-button" type="submit" value="JOIN US" />
+    <form id="joinForm" onsubmit="joinForm()">
+      <div class="join-section">
+        <p>COME ON JOIN OUR ROBOTIC CLUB</p>
+        <div class="send-information">
+          <input name="name" type="text" class="feedback-input" placeholder="Name"  required pattern="^[A-Za-z]+$" oninvalid="setCustomValidity('Please enter your name A-z format')"/>
+          <input name="department" type="text" class="feedback-input" placeholder="Department" id="departments" required/>
+          <input name="email" type="email" class="feedback-input" placeholder="Email" required oninvalid="setCustomValidity('Please enter your email like example@example.example format')"/>
+          <textarea name="text" class="feedback-input" placeholder="Your motivation" required></textarea>
+          <button class="send-button" type="submit" >JOIN US</button>
+        </div>
       </div>
+    </form>
+    <div id="dialog-confirm">
+      <p><span class="ui-icon ui-icon-alert" style="float:left; margin:12px 12px 20px 0;"></span></p>
     </div>
   </div>
   <div class="footer">

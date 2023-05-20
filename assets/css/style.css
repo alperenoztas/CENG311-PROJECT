@@ -326,6 +326,7 @@
     background: #CC4949;
 }
 
+
 /*Activity Section*/
 
 #activities-text {
@@ -354,25 +355,25 @@
 
 .activity-l {
     width: 90%;
-    height: 20%;
+    height: 30%;
     background: url('../images/activity-left.jpg') no-repeat center center/cover;
     margin-left: auto;
     margin-right: auto;
 }
 
 .activity-l .content {
-    margin-left: 65%;
+    margin-left: 65%;  
     width: 40%;
     padding: 2% 0 0 2%;
 }
 
 .activity-l p {
-    margin: 10px 0 20px;
+    margin: 20px 0 20px;
 }
 
 .activity-r {
     width: 90%;
-    height: 20%;
+    height: 30%;
     background: url('../images/activity-right.jpg') no-repeat center center/cover;
     margin-left: auto;
     margin-right: auto;
@@ -418,6 +419,7 @@
 
 .show-cards {
     width: 90%;
+    /*width : 40%;*/
     margin: 5% auto;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -434,6 +436,8 @@
 
 .show-cards img {
     width: 100%;
+    /*margin-left: 30%;*/
+    /*width : 40%;*/
     margin-bottom: 20px;
 }
 
