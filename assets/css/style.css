@@ -142,6 +142,11 @@
     color: #262626;
 }
 
+#introTitleHidden{
+    display: none;
+    color: yellow;
+}
+
 .group-intro p {
     margin: 7% 0;
     font-size: larger;

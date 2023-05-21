@@ -1,0 +1,13 @@
+Widgets:
+JQuery UI : Autocomplete
+JQuery UI : Dialog
+Magnific Pop-Up Image
+Custombox Modal
+
+Plugins:
+-click,-mouse-enter,mouse-leave
+-css
+-hover
+-slideUp
+-show
+-animate

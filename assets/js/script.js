@@ -1,3 +1,9 @@
+/*
+@Author : Alperen Öztaş
+*/
+
+// In here I used more than 1 widgets from jquery ui library, also I used magnific popup library for image popup, Custombox modal for video popup
+// Also I used jquery animate,show,slideUp like plugins more than once.
 
 $(function () {
 
@@ -48,6 +54,10 @@ $(function () {
   $('#motto').click(function (e) {
     e.preventDefault();
     $('#motto').html("We are the future!").css('font-size', '2.5rem');
+  });
+
+  $( "#introTitle" ).on( "click", function() {
+    $( "#introTitleHidden" ).show( "slow" );
   });
 
   //Read More in Home section click and read less
