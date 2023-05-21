@@ -1,6 +1,86 @@
 
 $(function () {
 
+  // Clicking logo changes navbar color and li properties
+  $('#logo').click(function () {
+    var navbarItems = '.navbar > ul > li > a'
+
+    $('.navbar').css('background-color', '#303030');
+    $(navbarItems).css({
+      'color': '#00008B',
+      'font-size' : '1.5rem'
+    });
+
+    $(navbarItems).hover(function () {
+
+        $(navbarItems).css('background-color', '#40E0D0');
+      }, function () {
+        $(navbarItems).css('background-color', 'initial');
+      }
+    );
+  });
+
+  // When cat is clicked dissapear slide appears
+  $('.main-introduction-bg').click(function () {
+    $(this).slideUp(400);
+  });
+
+  var originalText = $('#introText').html();
+
+  //Here jquery ui autocomplete widget
+  var departments = [
+    'Mechanical Engineering',
+    'Electrical and Electronics Engineering',
+    'Computer Engineering',
+    'Industrial Engineering',
+    'Civil Engineering',
+    'Chemical Engineering',
+    'Metallurgical and Materials Engineering',
+    'Mining Engineering',
+  ];
+
+  //Here jquery ui autocomplete widget
+  $('#departments').autocomplete({
+    source: departments
+  });
+
+  //Click motto above the page and it changes the text
+  $('#motto').click(function (e) {
+    e.preventDefault();
+    $('#motto').html("We are the future!").css('font-size', '2.5rem');
+  });
+
+  //Read More in Home section click and read less
+  $('#readMore').click(function (e) {
+
+    e.preventDefault();
+
+    if ($('#introText').text() === originalText) {
+      $('#introText').text(originalText.repeat(5));
+      $('#readMore').html("Read Less");
+    } else {
+      $('#introText').text(originalText);
+      $('#readMore').html("Read More");
+    }
+  });
+
+  //In projects page when Project Content is clicked, projects are animated
+  $('#project-content').click(function () { 
+    $('#project-content > #firstProject').animate({
+      fontSize: '2rem',
+      color: '#042142',
+    },1000);
+    $('#project-content > #secondProject').animate({
+      fontSize: '2rem',
+      color: '#073569',
+    },2000);
+    $('#project-content > #thirdProject').animate({
+      fontSize: '2rem',
+      color: '#0b4c96',
+    },3000);
+  });
+
+  //In projects when check it clicked on cards, modal opens with video
   $('#sumoVideo').click(function (e) { 
     e.preventDefault();
     var modal = new Custombox.modal({
@@ -52,75 +132,12 @@ $(function () {
     
     modal.open();
   });
-  
-  
-
-
-  // When cat is clicked dissapear slide appears
-  $('.main-introduction-bg').click(function () {
-    $(this).slideUp(400);
-  });
-
-  var originalText = $('#introText').html();
-
-  //Here jquery ui autocomplete widget
-  var departments = [
-    'Mechanical Engineering',
-    'Electrical and Electronics Engineering',
-    'Computer Engineering',
-    'Industrial Engineering',
-    'Civil Engineering',
-    'Chemical Engineering',
-    'Metallurgical and Materials Engineering',
-    'Mining Engineering',
-  ];
-
-  //Here jquery ui autocomplete widget
-  $('#departments').autocomplete({
-    source: departments
-  });
-
-  //when click motto change text
-  $('#motto').click(function (e) {
-    e.preventDefault();
-    $('#motto').html("We are the future!").css('font-size', '2.5rem');
-  });
-
-  //when click read more button change text
-  $('#readMore').click(function (e) {
-
-    e.preventDefault();
-
-    if ($('#introText').text() === originalText) {
-      $('#introText').text(originalText.repeat(5));
-      $('#readMore').html("Read Less");
-    } else {
-      $('#introText').text(originalText);
-      $('#readMore').html("Read More");
-    }
-  });
-
-
-  $('#project-content').click(function () { 
-    $('#project-content > #firstProject').animate({
-      fontSize: '2rem',
-      color: '#042142',
-    },1000);
-    $('#project-content > #secondProject').animate({
-      fontSize: '2rem',
-      color: '#073569',
-    },2000);
-    $('#project-content > #thirdProject').animate({
-      fontSize: '2rem',
-      color: '#0b4c96',
-    },3000);
-  });
 
   //when activity wide card is clicked change card size and text
   $('#activityJoinL').click(function (e) {
 
     e.preventDefault();
-    alert("You clicked me!");
+    
     $('.activity-l .content').css({
       'width': '450%',
       'margin-left': '40%',
@@ -137,9 +154,7 @@ $(function () {
   //when activity wide card is clicked change card size and text
   $('#activityJoinR').click(function (e) {
 
-
     e.preventDefault();
-    alert("You clicked me!");
 
     $('.activity-r .content').css({
       'width': '450%',
@@ -207,6 +222,23 @@ $(function () {
       opacity: '1'
     }, 200);
   });
+
+  //Magnific popup on the future of our club image in home page
+  $('.with-caption').magnificPopup({
+		type: 'image',
+		closeOnContentClick: true,
+		closeBtnInside: false,
+		mainClass: 'mfp-with-zoom mfp-img-mobile',
+		image: {
+			verticalFit: true,
+			titleSrc: function(item) {
+				return item.el.attr('title') + ' &middot; <a style="color:white;" class="image-source-link" href="'+item.el.attr('data-source')+'" target="_blank">image source</a>';
+			}
+		},
+		zoom: {
+			enabled: true
+		}
+	});
 
 });
 

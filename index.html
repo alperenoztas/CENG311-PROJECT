@@ -8,10 +8,12 @@
     <title>Home Page</title>
     <link rel="icon" type="image/x-icon" href="assets/images/logo.png">
 
+    <link rel="stylesheet" href="assets/lib/magnific-popup/magnific-popup.css">
     <link rel="stylesheet" href="assets/lib/jqueryui/jquery-ui.css">
     <link rel="stylesheet" href="assets/css/style.css">
 
     <script src="assets/lib/jquery/jquery.js"></script>
+    <script src="assets/lib/magnific-popup/jquery.magnific-popup.js"></script>
     <script src="assets/lib/jqueryui/jquery-ui.js"></script>
     <script src="assets/js/script.js"></script>
 </head>
@@ -23,7 +25,7 @@
         </div>
         <div class="navbar">
             <div class="navbar-logo">
-                <h1><img src="assets/images/logo.png" alt="Logo"></h1>
+                <h1><img id="logo" src="assets/images/logo.png" alt="Logo"></h1>
                 <a href="index.html">
                     <p>AYBU ROBOTICS</p>
                 </a>
@@ -50,7 +52,9 @@
                     </p>
                     <a class="intro-btn" id="readMore">Read More</a>
                 </div>
-                <img src="assets/images/robotic-banner.jpg" alt="" />
+                <a href="assets/images/robotic-banner.jpg" data-source="https://www.bostondynamics.com/resources/blog" class="with-caption image-link" title="Boston Dynamic Blog">
+                    <img src="assets/images/robotic-banner.jpg" width="172" height="200" alt="Logo"/>  
+                </a>
             </div>
         </div>
         <div class="content">
