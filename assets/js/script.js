@@ -7,6 +7,55 @@
 
 $(function () {
 
+  $.ajax({
+    url: 'http://export.arxiv.org/api/query?search_query=robotics&max_result=4',
+    method: 'GET',
+    dataType: 'xml',
+    success: function(response) {
+      var entries = $(response).find('entry');
+      var results = [];
+  
+      entries.each(function(index, entry) {
+        var id = $(entry).find('id').text();
+        var title = $(entry).find('title').text();
+        var summary = $(entry).find('summary').text();
+  
+        // Limit the summary to 200 characters
+        if (summary.length > 200) {
+          summary = summary.substring(0, 200) + '...';
+        }
+  
+        var result = {
+          id: id,
+          title: title,
+          summary: summary
+        };
+  
+        results.push(result);
+      });
+  
+      var selectedResults = results.slice(0, 4);
+  
+      $('.infos .col .card .content').each(function(index, element) {
+        var id = selectedResults[index].id;
+        var title = selectedResults[index].title;
+        var summary = selectedResults[index].summary;
+        $(element).find('h1').text(title);
+        $(element).find('p').text(summary);
+  
+        // Add id as a data attribute
+        $(element).closest('.card').attr('data-id', id);
+  
+        // Update href of article link
+        var articleLink = $(element).find('.article-link');
+        articleLink.attr('href', id);
+      });
+    },
+    error: function(xhr, status, error) {
+      console.log('Request failed with status: ' + status + ', error: ' + error);
+    }
+  });
+
   fetchQuote();
 
   $.getJSON("assets/json_files/activities.json", function(data) {
@@ -383,7 +432,6 @@ function fetchQuote() {
     .done(function (data) {
       const quote = data.content;
       const author = data.author;
-      console.log(quote, author);
       $('#quote').text(quote);
       $('#author').text(author);
     })
