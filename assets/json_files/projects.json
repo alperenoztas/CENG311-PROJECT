@@ -1,0 +1,52 @@
+{
+  "projects": [
+    {
+      "title": "Autonomous Drone",
+      "description": "Our team built an autonomous drone capable of performing complex maneuvers and tasks. It uses advanced computer vision algorithms to navigate its surroundings and complete missions.",
+      "participation": 100,
+      "image": "autonomous_drone.jpg"
+    },
+    {
+      "title": "Robot Arm Assembly",
+      "description": "In this project, we designed and assembled a robotic arm capable of precise movements and gripping objects. The arm is controlled using a combination of sensors and actuators.",
+      "participation": 75,
+      "image": "robot_arm.jpg"
+    },
+    {
+      "title": "Swarm Drones",
+      "description": "We built a swarm of drones that can work together to complete tasks. Each drone is equipped with sensors and actuators, allowing it to communicate with other drones and coordinate its actions.",
+      "participation": 278,
+      "image": "swarm_drones.jpg"
+    },
+    {
+      "title": "Line Following Robot",
+      "description": "We developed a robot that can follow a predefined path marked by a line on the ground. The robot uses infrared sensors to detect the line and adjust its movements accordingly.",
+      "participation": 197,
+      "image": "line_following.jpg"
+    },
+    {
+      "title": "Talking Robot",
+      "description": "Our team built a robot that can speak and interact with humans. It uses speech recognition software to understand commands and respond accordingly. The robot also has a face that can display emotions.",
+      "participation": 188,
+      "image": "talking_robot.jpg"
+    },
+    {
+      "title": "Obstacle Avoidance Robot",
+      "description": "Our team built a robot that can navigate through an environment while avoiding obstacles. It uses ultrasonic sensors to detect objects in its path and adjusts its trajectory accordingly.",
+      "participation": 30,
+      "image": "obstacle_avoidance.jpg"
+    },
+    {
+      "title": "Sumo Robot Competition",
+      "description": "We participated in a sumo robot competition where our robot had to push the opponent's robot out of a ring. Our robot was designed for strength and agility, utilizing powerful motors and strategic maneuvering.",
+      "participation": 387,
+      "image": "sumo_robot.jpg"
+    },
+    {
+      "title": "Robotics Workshop for Beginners",
+      "description": "We organized a workshop aimed at introducing beginners to the world of robotics. Participants learned the basics of robot design, programming, and had hands-on experience building simple robots.",
+      "participation": 65,
+      "image": "robotics_workshop.jpg"
+    }
+  ]
+}

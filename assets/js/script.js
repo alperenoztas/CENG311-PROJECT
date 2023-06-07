@@ -7,6 +7,48 @@
 
 $(function () {
 
+  fetchQuote();
+
+  $.getJSON("assets/json_files/activities.json", function(data) {
+    // Sort the activities by rating in descending order
+    data.activities.sort(function(a, b) {
+        return b.rating - a.rating;
+    });
+
+    // Take the top 4 activities
+    var topActivities = data.activities.slice(0, 4);
+
+    // Display the top activities on the cards
+    $.each(topActivities, function(index, activity) {
+        var cardId = "#card" + (index + 1);
+        var card = $(cardId);
+
+        card.find("img").attr("src", "assets/images/activities/activity_" + activity.image);
+        card.find("h3").text(activity.title);
+        card.find("p").text(activity.description);
+        card.find("a").attr("onclick", "activityCardResponse('" + cardId + "', '" + activity.description + "', '" + activity.longDescription + "')");
+    });
+  });
+
+  $.getJSON("assets/json_files/projects.json", function(data) {
+    // Sort the projects by participation in descending order
+    data.projects.sort(function(a, b) {
+        return b.participation - a.participation;
+    });
+
+    // Take the top 4 projects
+    var topProjects = data.projects.slice(0, 4);
+
+    // Display the top projects on the cards
+    $.each(topProjects, function(index, project) {
+        var card = $(".show-card").eq(index);
+
+        card.find("img").attr("src", "assets/images/projects/projects_" + project.image);
+        card.find("h3").text(project.title);
+        card.find("p").text(project.description);
+    });
+  });
+
   // Clicking logo changes navbar color and li properties
   $('#logo').click(function () {
     var navbarItems = '.navbar > ul > li > a'
@@ -254,9 +296,9 @@ $(function () {
 
 
 //Activity Html Tables Card is changing due to cardId taken by page
-function activityCardResponse(cardId) {
-
-  if ($('#' + cardId + ' > a').html() === "Read More") {
+function activityCardResponse(cardId,description,longDescription) {
+  
+  if ($(cardId + ' > a').html() === "Read More") {
     $('.show-cards').css({
       'grid-template-columns': 'repeat(1, 1fr)',
       'width': '40%'
@@ -265,10 +307,10 @@ function activityCardResponse(cardId) {
       'width': '40%',
       'margin-left': '30%'
     });
-    $('#' + cardId + ' > p').html("This is a test text for the card.".repeat(40)).css({
+    $(cardId + ' > p').html(longDescription).css({
       'font-size': '1.5rem',
     });
-    $('#' + cardId + ' > a').html("Read Less");
+    $(cardId + ' > a').html("Read Less");
   } else {
     $('.show-cards').css({
       'grid-template-columns': 'repeat(4, 1fr)',
@@ -278,10 +320,10 @@ function activityCardResponse(cardId) {
       'width': '100%',
       'margin-left': 'initial'
     });
-    $('#' + cardId + ' > p').html("Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.").css({
+    $(cardId + ' > p').html(description).css({
       'font-size': 'initial',
     });
-    $('#' + cardId + ' > a').html("Read More");
+    $(cardId + ' > a').html("Read More");
   }
 
 }
@@ -326,6 +368,28 @@ function sendNotificationModal(name, email, department) {
       }
     }
   });
+}
+
+//Fetch quote from forismatic api and display it on the home page
+function fetchQuote() {
+  
+  const quoteUrl = 'https://api.quotable.io/random';
+
+  $.ajax({
+    url: quoteUrl,
+    method: 'GET',
+    dataType: 'json'
+  })
+    .done(function (data) {
+      const quote = data.content;
+      const author = data.author;
+      console.log(quote, author);
+      $('#quote').text(quote);
+      $('#author').text(author);
+    })
+    .fail(function (error) {
+      console.error(error);
+    });
 }
 
 

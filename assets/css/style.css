@@ -136,6 +136,23 @@
     justify-content: center;
 }
 
+#today-quote{
+    font-size: 3rem;
+}
+
+#quote{
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #545454;
+}
+
+#author{
+    font-size: 2rem;
+    font-weight: 500;
+    color: #545454;
+    font-style: italic;
+}
+
 .group-intro h1 {
     margin-top: 5%;
     font-size: xx-large;
@@ -361,7 +378,7 @@
 .activity-l {
     width: 90%;
     height: 30%;
-    background: url('../images/activity-left.jpg') no-repeat center center/cover;
+    background: url('../images/ultimate_activities/ultimate-activity-left.jpg') no-repeat center center/cover;
     margin-left: auto;
     margin-right: auto;
 }
@@ -379,7 +396,7 @@
 .activity-r {
     width: 90%;
     height: 30%;
-    background: url('../images/activity-right.jpg') no-repeat center center/cover;
+    background: url('../images/ultimate_activities/ultimate-activity-right.jpg') no-repeat center center/cover;
     margin-left: auto;
     margin-right: auto;
 }
@@ -412,6 +429,8 @@
 .project-p-image{
     float: left;
     margin-right: 10px;
+    width: 25%;
+    height: 25%;
     
 }
 
