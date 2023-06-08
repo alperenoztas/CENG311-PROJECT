@@ -8,7 +8,7 @@
 $(function () {
 
   $.ajax({
-    url: 'http://export.arxiv.org/api/query?search_query=robotics&max_result=4',
+    url: 'https://export.arxiv.org/api/query?search_query=robotics&max_result=4',
     method: 'GET',
     dataType: 'xml',
     success: function(response) {
