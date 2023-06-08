@@ -14,7 +14,7 @@ $(function () {
     success: function(response) {
       var entries = $(response).find('entry');
       var results = [];
-  
+      console.log(response);
       entries.each(function(index, entry) {
         var id = $(entry).find('id').text();
         var title = $(entry).find('title').text();
