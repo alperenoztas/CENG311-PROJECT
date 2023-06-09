@@ -58,11 +58,8 @@ $(function () {
   // Fetch default article when the page loads
   $('#robotics').trigger('click');
 
+  // Fetch data from forismatic api and display it on the home page
   fetchQuote();
-
-  
-  
-
 
   // Fetch data from projects.json and sort them by participation in descending order and display the top 4 projects on the cards
   fetchProjects();

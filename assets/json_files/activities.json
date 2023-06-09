@@ -40,7 +40,7 @@
       "description": "The Line-Following Robot Race involves designing robots that can follow a predefined line on a track. Participants must develop strategies to ensure their robots navigate the track accurately and complete the race in the shortest possible time.",
       "longDescription": "The Line-Following Robot Race is a thrilling competition that combines precision engineering and programming skills. Participants will design and build robots capable of following a predefined line on a track. The robots will be equipped with sensors, such as line sensors or color sensors, to detect and track the line. The challenge is to program the robots to make precise movements and adjustments to stay on the line while completing the race in the shortest possible time. This activity encourages algorithm optimization, sensor integration, and fine-tuning of robotic control systems.",
       "image" : "line-following-robot-race.jpg",
-      "rating": 5.0
+      "rating": 2.4
     },
     {
       "title": "Robotic Arm Construction and Control",
