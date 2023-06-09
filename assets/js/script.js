@@ -402,7 +402,7 @@ function fetchActivities() {
     $.each(topActivities, function (index, activity) {
       var cardId = "#card" + (index + 1);
       var card = $(cardId);
-      
+      console.log(activity);
       card.find("img").attr("src", "assets/images/activities/activity_" + activity.image);
       card.find("h3").text(activity.title);
       card.find("p").text(activity.description);
