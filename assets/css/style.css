@@ -181,6 +181,37 @@
     margin-top: 5%;
     font-size: 50px;
 }
+
+.article-container {
+    text-align: center;
+    margin-left: -40%;
+    margin-bottom: -15%;
+
+}
+  
+.article-button {
+    background-color: #4c63af;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
+    cursor: pointer; 
+    border-radius: 5px; 
+    transition-duration: 0.4s; 
+    margin: 5px; 
+}
+
+.article-button.selected {
+    background-color: #45a049;
+  }
+  
+.article-button:hover {
+    background-color: #45a049; /* Darker green background on hover */
+}
+
 .infos {
     margin-top: -10%;
     margin-bottom: -10%;
