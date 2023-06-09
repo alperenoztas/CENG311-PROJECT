@@ -60,49 +60,15 @@ $(function () {
 
   fetchQuote();
 
-  // Fetch data from activities.json and sort them by rating in descending order and display the top 4 activities on the cards
-  $.getJSON("assets/json_files/activities.json", function (data) {
-    // Sort the activities by rating in descending order
-    data.activities.sort(function (a, b) {
-      return b.rating - a.rating;
-    });
-
-    // Take the top 4 activities
-    var topActivities = data.activities.slice(0, 4);
-
-    // Display the top activities on the cards
-    $.each(topActivities, function (index, activity) {
-      var cardId = "#card" + (index + 1);
-      var card = $(cardId);
-
-      card.find("img").attr("src", "assets/images/activities/activity_" + activity.image);
-      card.find("h3").text(activity.title);
-      card.find("p").text(activity.description);
-      card.find("a").attr("onclick", "activityCardResponse('" + cardId + "', '" + activity.description + "', '" + activity.longDescription + "')");
-    });
-  });
+  
+  
 
 
   // Fetch data from projects.json and sort them by participation in descending order and display the top 4 projects on the cards
-  $.getJSON("assets/json_files/projects.json", function (data) {
+  fetchProjects();
 
-    // Sort projects by participation
-    data.projects.sort(function (a, b) {
-      return b.participation - a.participation;
-    });
-
-    // Top 4 projects
-    var topProjects = data.projects.slice(0, 4);
-
-    // Display projects
-    $.each(topProjects, function (index, project) {
-      var card = $(".show-card").eq(index);
-
-      card.find("img").attr("src", "assets/images/projects/projects_" + project.image);
-      card.find("h3").text(project.title);
-      card.find("p").text(project.description);
-    });
-  });
+  // Fetch data from activities.json and sort them by rating in descending order and display the top 4 activities on the cards
+  fetchActivities();
 
   // Clicking logo changes navbar color and li properties
   $('#logo').click(function () {
@@ -422,6 +388,51 @@ function sendNotificationModal(name, email, department) {
 
       }
     }
+  });
+}
+
+function fetchActivities() {
+  $.getJSON("assets/json_files/activities.json", function (data) {
+    // Sort the activities by rating in descending order
+    data.activities.sort(function (a, b) {
+      return b.rating - a.rating;
+    });
+
+    // Take the top 4 activities
+    var topActivities = data.activities.slice(0, 4);
+
+    // Display the top activities on the cards
+    $.each(topActivities, function (index, activity) {
+      var cardId = "#card" + (index + 1);
+      var card = $(cardId);
+      
+      card.find("img").attr("src", "assets/images/activities/activity_" + activity.image);
+      card.find("h3").text(activity.title);
+      card.find("p").text(activity.description);
+      card.find("a").attr("onclick", "activityCardResponse('" + cardId + "', '" + activity.description + "', '" + activity.longDescription + "')");
+    });
+  });
+}
+
+function fetchProjects() {
+  $.getJSON("assets/json_files/projects.json", function (data) {
+
+    // Sort projects by participation
+    data.projects.sort(function (a, b) {
+      return b.participation - a.participation;
+    });
+
+    // Top 4 projects
+    var topProjects = data.projects.slice(0, 4);
+
+    // Display projects
+    $.each(topProjects, function (index, project) {
+      var card = $(".show-card").eq(index);
+
+      card.find("img").attr("src", "assets/images/projects/projects_" + project.image);
+      card.find("h3").text(project.title);
+      card.find("p").text(project.description);
+    });
   });
 }
 
