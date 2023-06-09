@@ -21,6 +21,12 @@ Ajax:
 
 $(function () {
 
+  // Fetch data from projects.json and sort them by participation in descending order and display the top 4 projects on the cards
+  fetchProjects();
+
+  // Fetch data from activities.json and sort them by rating in descending order and display the top 4 activities on the cards
+  fetchActivities();
+
   // Change the image source for each card default robotics image
   var defaultImagePath = 'assets/images/articles/robotics/article-card-1.jpg';
   $('.infos .col').each(function (index, element) {
@@ -60,12 +66,6 @@ $(function () {
 
   // Fetch data from forismatic api and display it on the home page
   fetchQuote();
-
-  // Fetch data from projects.json and sort them by participation in descending order and display the top 4 projects on the cards
-  fetchProjects();
-
-  // Fetch data from activities.json and sort them by rating in descending order and display the top 4 activities on the cards
-  fetchActivities();
 
   // Clicking logo changes navbar color and li properties
   $('#logo').click(function () {
@@ -402,7 +402,7 @@ function fetchActivities() {
     $.each(topActivities, function (index, activity) {
       var cardId = "#card" + (index + 1);
       var card = $(cardId);
-      console.log(activity);
+      
       card.find("img").attr("src", "assets/images/activities/activity_" + activity.image);
       card.find("h3").text(activity.title);
       card.find("p").text(activity.description);
